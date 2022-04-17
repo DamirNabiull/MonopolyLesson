@@ -23,6 +23,13 @@ class MyCell:
     def get_price(self):
         return self.__price
 
+    def get_data(self):
+        to_return = ''
+        to_return += f'Улица: {self.__name}, Стоимость: {self.__cost}, Цена за попадание: {self.__price}'
+        if self.has_owner():
+            to_return += f', Владелец: {self.__owner}'
+        return to_return
+
     def print_data(self):
         print(f'Улица: {self.__name}, Стоимость: {self.__cost}, Цена за попадание: {self.__price}', end='')
         if self.has_owner():

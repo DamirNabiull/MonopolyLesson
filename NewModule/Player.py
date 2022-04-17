@@ -3,6 +3,12 @@ class MyPlayer:
         self.__position = 0
         self.__money = money
 
+    def is_lose(self):
+        return self.__money <= 0
+
+    def add_money(self, cost):
+        self.__money += cost
+
     def spend_money(self, cost):
         self.__money -= cost
 
@@ -14,3 +20,6 @@ class MyPlayer:
 
     def print_data(self):
         print(f'Позиция: {self.__position}, Деньги: {self.__money}')
+
+    def get_data(self):
+        return f'Позиция: {self.__position}, Деньги: {self.__money}'
